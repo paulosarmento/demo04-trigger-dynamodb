@@ -1,0 +1,40 @@
+{
+  "Records": [
+    {
+      "eventID": "0562d66550d50714548c8f1d90015db5",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1640384690,
+        "Keys": {
+          "nome": {
+            "S": "Homem de ferro"
+          },
+          "id": {
+            "S": "4e74e470-6508-11ec-98a8-bb7cb5e357b4"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "S": "2021-12-24T22:24:49.207Z"
+          },
+          "nome": {
+            "S": "Homem de ferro"
+          },
+          "id": {
+            "S": "4e74e470-6508-11ec-98a8-bb7cb5e357b4"
+          },
+          "poder": {
+            "S": "Rico"
+          }
+        },
+        "SequenceNumber": "1395500000000084768988130",
+        "SizeBytes": 154,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:009700610486:table/Heroes/stream/2021-12-24T22:06:50.815"
+    }
+  ]
+}
