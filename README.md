@@ -60,15 +60,54 @@ layers:
 After successful deployment, you can invoke the deployed function by using the following command:
 
 ```bash
-serverless invoke --function hello
+npm run invoke-trigger
 ```
 
 Which should result in response similar to the following:
 
 ```json
+Event*** {
+  "Records": [
+    {
+      "eventID": "0562d66550d50714548c8f1d90015db5",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1640384690,
+        "Keys": {
+          "nome": {
+            "S": "Homem de ferro"
+          },
+          "id": {
+            "S": "4e74e470-6508-11ec-98a8-bb7cb5e357b4"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "S": "2021-12-24T22:24:49.207Z"
+          },
+          "nome": {
+            "S": "Homem de ferro"
+          },
+          "id": {
+            "S": "4e74e470-6508-11ec-98a8-bb7cb5e357b4"
+          },
+          "poder": {
+            "S": "Rico"
+          }
+        },
+        "SequenceNumber": "1395500000000084768988130",
+        "SizeBytes": 154,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:009700610486:table/Heroes/stream/2021-12-24T22:06:50.815"
+    }
+  ]
+}
 {
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": {}\n}"
+    "statusCode": 200
 }
 ```
 
@@ -77,7 +116,7 @@ Which should result in response similar to the following:
 You can invoke your function locally by using the following command:
 
 ```bash
-serverless invoke local --function hello
+npm run invoke-local
 ```
 
 Which should result in response similar to the following:
@@ -85,6 +124,6 @@ Which should result in response similar to the following:
 ```
 {
     "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
+    "body": "{\"nome\":\"Homem de ferro\",\"poder\":\"Rico\",\"id\":\"4b81b550-67eb-11ec-aadd-b59e0058699f\",\"createdAt\":\"2021-12-28T14:34:42.341Z\"}" 
 }
 ```
